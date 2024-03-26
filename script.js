@@ -24,9 +24,6 @@ let weather=img.nextElementSibling;
 let data=document.querySelector('.data');
 
 
-
-
-
 async function fetch(){
     data.style="left:0rem";
     let result= await getdata();
