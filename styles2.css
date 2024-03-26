@@ -1,0 +1,44 @@
+
+*{
+    font-size: 1rem;
+    font-weight: 500;
+}
+body{
+    background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background-size: contain;
+    padding: 0px;
+}
+.main{
+    height: 100vh;
+    width: 30rem;
+    background-color: #91c7b193;
+    padding: 2rem;
+    
+}
+input{
+    outline: none;
+    border: none;
+    height: 2rem;
+    width: 60%;
+    border-radius: 0.5rem;
+    padding-left: 0.5rem;
+}
+button{
+    height: 2rem;
+    margin-left: -2.5rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+i{
+    font-size: large;
+   
+}
+button:active{
+    transform: scale(0.97);
+}
+button:hover{
+    background-color: green;
+    color: wheat;
+}
