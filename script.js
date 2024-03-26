@@ -22,14 +22,13 @@ let img=document.querySelector('.img');
 let daynight=document.querySelector('.day');
 let weather=img.nextElementSibling;
 let data=document.querySelector('.data');
-let card=document.querySelector('.main-card');
+
 
 
 
 
 async function fetch(){
     data.style="left:0rem";
-    card.style="margin-left:0rem"
     let result= await getdata();
     console.log(result);
 
