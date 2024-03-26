@@ -25,8 +25,8 @@ let data=document.querySelector('.data');
 
 
 async function fetch(){
-    data.style="left:0rem";
     let result= await getdata();
+    data.style="left:0rem";
     console.log(result);
 
     let temp= await result.main.temp;
