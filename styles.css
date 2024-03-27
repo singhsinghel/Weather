@@ -41,11 +41,9 @@ button{
     border: none;
     color: #216c98;
     background-color:rgb(239, 237, 234);
-
 }
 i{
     font-size: large;
-    
 }
 button:active{
     transform: scale(0.97);
@@ -58,23 +56,18 @@ img{
 }
 .weather{
     text-align: center;
-    margin-top: -1rem;
-
-   
+    margin-top: -1rem;  
 }
 .main-card h1{
     text-align: center;
     font-size: 5rem;
     margin-top: 2rem;
 }
-
-
 .break{
     margin: auto;
     height: 0.1rem;
     width: 90%;
-    background-color: #505a6095;
-    
+    background-color: #505a6095;   
 }
 .date-time{
    text-align: center;
@@ -90,14 +83,12 @@ img{
     font-size: 3rem;
    margin-bottom: 0rem;
 }
-
-
 .data{
     padding: 4rem;
     background-color:#ece5e5;
     width: 100%;
-    flex: 1;
-    overflow: auto;   
+    flex: 1;                            
+    overflow:scroll;   
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -108,8 +99,6 @@ img{
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
     
 }
-
-
 .details{
     background-color: #6ba4d0;
     height: 9rem;
@@ -144,10 +133,13 @@ p{
         width: 24%;
     }
     .data{
-        padding: 0.4rem;
+        padding: 0.2rem;
     }
     .data.details{
         margin: 0.2rem;
+    }
+    .wind p{
+        display: none;
     }
     button{
         position: relative;
