@@ -22,7 +22,7 @@ let img=document.querySelector('.img');
 let daynight=document.querySelector('.day');
 let weather=img.nextElementSibling;
 let data=document.querySelector('.data');
-
+let week=["monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 
 async function fetch(){
     let result= await getdata();
@@ -45,8 +45,8 @@ async function fetch(){
     pressure.innerText=`${result.main.pressure} hPa`;
 
 
-    lat.innerText=` Lat- ${result.coord.lat} ${'\u00B0'}  `;
-    long.innerText=`Lon- ${result.coord.lon} ${'\u00B0'}  `;
+    lat.innerText=` Lat - ${result.coord.lat} ${'\u00B0'}  `;
+    long.innerText=`Lon - ${result.coord.lon} ${'\u00B0'}  `;
 
     temp=await result.main.temp_max;
     temp_cels=parseInt(temp-273.15);
@@ -55,8 +55,6 @@ async function fetch(){
     temp=await result.main.temp_min;
     temp_cels=parseInt(temp-273.15);
    min.innerHTML= `<p><i class='bx bx-up-arrow bx-rotate-180'></i>${temp_cels} ${'\u00B0'}C </p>`;
-    min.append(``);
-
    
     h2.innerText=`${result.name}, ${result.sys.country}`;
 
@@ -107,7 +105,8 @@ async function sunrise(result){
     daynight.innerText='Night';
    else if(6<=hours<20) daynight.innerText='Day'
     minutes=newObj.getMinutes();
-    time.innerText=`${hours}:${minutes}`;
+    day=newObj.getDay();
+    time.innerText=`${week[day-1]} ${hours}:${minutes}`;
 }
 
 btn.addEventListener('click',fetch);
