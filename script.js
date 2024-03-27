@@ -22,7 +22,7 @@ let img=document.querySelector('.img');
 let daynight=document.querySelector('.day');
 let weather=img.nextElementSibling;
 let data=document.querySelector('.data');
-let week=["monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+let week=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 
 async function fetch(){
     let result= await getdata();
