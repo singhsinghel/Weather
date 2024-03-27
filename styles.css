@@ -127,15 +127,24 @@ p{
     font-weight: 700;
 }
 
+@media (max-width:1480px) {
+    .details{
+        transform: scale(0.95);
+        margin: 0.1rem;
+    }
+    .data{
+        padding: 0.2rem ;
+    }
+}
 
-@media (max-width: 960px) {  
+@media (max-width: 1010px) {  
     .main-card{
         width: 24%;
     }
     .data{
         padding: 0.2rem;
     }
-    .data.details{
+    .details{
         margin: 0.2rem;
     }
     .wind p{
