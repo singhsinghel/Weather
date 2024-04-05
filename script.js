@@ -115,7 +115,7 @@ async function sunrise(result){
     minutes=dateObj.getMinutes();
     seconds=dateObj.getSeconds();
     sunset.innerText= `Sunset:  ${hours}:${minutes}:${seconds}`;
-
+     
     let newObj= new Date();
     let day=newObj.getDate();
     let month=newObj.getMonth()+1;
@@ -124,7 +124,7 @@ async function sunrise(result){
     hours=newObj.getHours();
     if(hours>=20||hours<=5)
     daynight.innerText='Night';
-   else if(6<=hours<20) daynight.innerText='Day'
+    else if(6<=hours<20) daynight.innerText='Day'
     minutes=newObj.getMinutes();
     day=newObj.getDay();
     time.innerText=`${week[day-1]} ${hours}:${minutes}`;

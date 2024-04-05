@@ -5,7 +5,6 @@
     font-family: "Quicksand", sans-serif;
 }
 body{
-    background-color:#ece5e5;
     background-size: contain;
     margin: 0px;
 }
@@ -14,7 +13,7 @@ body{
     display: flex;
     background-image: url(./images/bg9.png);
     background-size: contain;
-   background-clip: border-box;
+    background-clip: border-box;
     background-position: 9rem;
 }
 .main.blur::before {          /*to add blur effect on the main div*/
@@ -24,12 +23,11 @@ body{
     height: 100%;
     backdrop-filter: blur(12px) ;     /* for a glass like blur*/
 }
-
 .main-card{
-    z-index: 6;
+    z-index: 2;
     border-right: 2px solid black;
     width: 25rem;
-    background-color: #ece5e5;
+    background-color: #fff;
     padding: 2rem;
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
 }
@@ -152,7 +150,6 @@ p{
         padding: 0.2rem ;
     }
 }
-
 @media (max-width: 1010px) {  
     .main-card{
         width: 24%;
@@ -166,11 +163,6 @@ p{
     }
     .wind p{
         display: none;
-    }
-    button{
-        position: relative;
-        top: -2.4rem;
-        left: 12rem;
     }
     .details{
         width: 9rem;
