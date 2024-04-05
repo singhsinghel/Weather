@@ -24,7 +24,7 @@ body{
     backdrop-filter: blur(12px) ;     /* for a glass like blur*/
 }
 .main-card{
-    z-index: 2;
+    z-index: 5;
     border-right: 2px solid black;
     width: 25rem;
     background-color: #fff;
