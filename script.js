@@ -23,12 +23,24 @@ let daynight=document.querySelector('.day');
 let weather=img.nextElementSibling;
 let data=document.querySelector('.data');
 let week=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+let count =0;
 
 async function fetch(){
-    let result= await getdata();
-    data.style="left:0rem";
-    console.log(result);
-
+ try {
+        let city=input.value;
+        let url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a3bebfdc0403f6eaa90b5170910d19e5`;
+        let fetched= await axios.get(url);
+        let result= fetched.data;
+        if(count==0){
+           data.style="left:0rem";
+            count=1;
+            }
+       else if(count==1){
+        data.style= "left:200rem";
+        setTimeout(() => {
+            data.style="left:0rem";
+        }, 200);
+    }
     let temp= await result.main.temp;
     let temp_cels=parseInt(temp-273.15);
     h1.innerText=`${temp_cels} ${'\u00B0'}c`;
@@ -43,7 +55,6 @@ async function fetch(){
     realFeel.innerText=`${temp_cels} ${'\u00B0'}C`;
     
     pressure.innerText=`${result.main.pressure} hPa`;
-
 
     lat.innerText=` Lat - ${result.coord.lat} ${'\u00B0'}  `;
     long.innerText=`Lon - ${result.coord.lon} ${'\u00B0'}  `;
@@ -66,12 +77,13 @@ async function fetch(){
     visible.innerText=`${result.visibility} mtrs`;
     
     image(result);
-    
+    } 
+    catch (error) {
+        alert("Enter valid city");
+    }
 }
-
 function image(result){
     let icon=result.weather[0].icon;
-    console.log(icon)
     img.src=`https://openweathermap.org/img/wn/${icon}@2x.png`;
     weather.innerText=result.weather[0].description;
 }
@@ -108,23 +120,8 @@ async function sunrise(result){
     day=newObj.getDay();
     time.innerText=`${week[day-1]} ${hours}:${minutes}`;
 }
-
 btn.addEventListener('click',fetch);
 document.addEventListener('keyup',(event)=>{
     if(event.code=='Enter')
     fetch();
-})
-
-async function getdata () {
-    try {
-        let city=input.value;
-        let url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a3bebfdc0403f6eaa90b5170910d19e5`;
-        let result= await axios.get(url);
-        return result.data;
-    } catch (error) {
-        console.log("error has been occured")
-        console.log(error);
-        alert("Enter valid city");
-    }
-}
-
+});
