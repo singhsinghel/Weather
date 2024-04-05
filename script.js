@@ -24,6 +24,8 @@ let weather=img.nextElementSibling;
 let data=document.querySelector('.data');
 let week=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 let count =0;
+let main=document.querySelector('.main');
+let card=document.querySelector('.main-card');
 
 async function fetch(){
  try {
@@ -31,14 +33,20 @@ async function fetch(){
         let url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a3bebfdc0403f6eaa90b5170910d19e5`;
         let fetched= await axios.get(url);
         let result= fetched.data;
+        console.log(result);
         if(count==0){
+           card.classList.add('main-cardafter');
            data.style="left:0rem";
+           setTimeout(() => {
+            main.classList.add('blur');
+           }, 200);
             count=1;
             }
        else if(count==1){
         data.style= "left:200rem";
         setTimeout(() => {
             data.style="left:0rem";
+            main.classList.add('blur');
         }, 200);
     }
     let temp= await result.main.temp;
@@ -80,6 +88,7 @@ async function fetch(){
     } 
     catch (error) {
         alert("Enter valid city");
+        console.log(error);
     }
 }
 function image(result){
