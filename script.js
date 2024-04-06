@@ -26,6 +26,8 @@ let week=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
 let count =0;
 let main=document.querySelector('.main');
 let card=document.querySelector('.main-card');
+let details=document.querySelectorAll('.details');
+let draggedel=null;
 
 async function fetch(){
  try {
@@ -134,3 +136,18 @@ document.addEventListener('keyup',(event)=>{
     if(event.code=='Enter')
     fetch();
 });
+
+details.forEach(detail=>{
+   detail.addEventListener('dragstart',(event)=>{
+    console.log(event.target);
+    draggedel=event.target;
+   });
+    detail.addEventListener('dragover',(event)=>event.preventDefault());
+    detail.addEventListener('drop',(event)=>{
+            event.preventDefault();
+            console.log(event.currentTarget);
+           let temp=draggedel.innerHTML;
+           draggedel.innerHTML=event.currentTarget.innerHTML;
+           event.currentTarget.innerHTML=temp;
+    });
+   });

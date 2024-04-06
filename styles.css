@@ -123,6 +123,7 @@ img{
     padding: 0.5rem ;
     padding-left: 1rem;
     color: white;
+    cursor: move;
 }
 .break-card{
     width: 90%;
